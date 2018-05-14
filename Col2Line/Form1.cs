@@ -13,6 +13,7 @@ namespace Col2Line
     public partial class frm_Mul2Sin : Form
     {
         Col2Line changeLine;
+        SimpleLogger logtofile;
 
         public frm_Mul2Sin()
         {
@@ -28,6 +29,10 @@ namespace Col2Line
         private void frm_Mul2Sin_Load(object sender, EventArgs e)
         {
             changeLine = new Col2Line();
+            logtofile = new SimpleLogger();
+            logtofile.Info($"Logging starts.");
+            logtofile.Trace($" Object is {changeLine.ToString()}");
+            logtofile.Trace($" Objetc is {logtofile.ToString()}");
         }
 
         private void btn_convert_Click(object sender, EventArgs e)
