@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Mul2Sin));
             this.btn_exit = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txt_lines = new System.Windows.Forms.TextBox();
             this.txt_single_line = new System.Windows.Forms.TextBox();
             this.btn_convert = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_copytext = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -51,11 +51,19 @@
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Apps-session-halt-icon.png");
+            this.imageList1.Images.SetKeyName(1, "copy-icon.png");
+            // 
             // txt_lines
             // 
             this.txt_lines.Location = new System.Drawing.Point(12, 12);
             this.txt_lines.Multiline = true;
             this.txt_lines.Name = "txt_lines";
+            this.txt_lines.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_lines.Size = new System.Drawing.Size(170, 84);
             this.txt_lines.TabIndex = 1;
             // 
@@ -75,13 +83,6 @@
             this.btn_convert.Text = "Change to Single line";
             this.btn_convert.UseVisualStyleBackColor = true;
             this.btn_convert.Click += new System.EventHandler(this.btn_convert_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Apps-session-halt-icon.png");
-            this.imageList1.Images.SetKeyName(1, "copy-icon.png");
             // 
             // btn_copytext
             // 
