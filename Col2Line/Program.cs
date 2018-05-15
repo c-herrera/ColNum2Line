@@ -20,3 +20,4 @@ namespace Col2Line
         }
     }
 }
+
