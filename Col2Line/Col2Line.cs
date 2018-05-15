@@ -24,6 +24,14 @@ namespace Col2Line
         /// </summary>
         public void ConvertLinesToSingle()
         {
+            var temp = new List<string>();
+            foreach (var s in _theLines)
+            {
+                if (!string.IsNullOrEmpty(s))
+                    temp.Add(s);
+            }
+            _theLines = temp.ToArray();
+
             _theLine = string.Join( " ", _theLines );
         }
 

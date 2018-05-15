@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Col2Line
 {
-    public class SimpleLogger
+    public class BasicLog
     {
 
         private string DatetimeFormat;
@@ -44,7 +44,7 @@ namespace Col2Line
         /// </summary>
         /// <param name="append">True to append to existing log file, False to overwrite and create new log file</param>
         /// <param name="filename">Optional : set a different name of the log if desired </param>
-        public SimpleLogger(string filename = "", bool append = false)
+        public BasicLog(string filename = "", bool append = false)
         {
             DatetimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
             StrgLevels = new string[] { " [TRACE] ", " [INFO] ", " [DEBUG] ", " [WARNING] ", " [ERROR] ", " [FATAL] ", " [REPORT] " };
