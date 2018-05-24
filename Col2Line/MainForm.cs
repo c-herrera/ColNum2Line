@@ -37,16 +37,20 @@ namespace Col2Line
             logtofile.Trace($" Object is {changeLine.ToString()}");
             logtofile.Trace($" Objetc is {logtofile.ToString()}");
             btn_copytext.Enabled = false;
+            logtofile.Info( $" There are not issues in this point, continue." );
         }
 
         private void btn_convert_Click(object sender, EventArgs e)
         {
-            if (txt_lines.Lines.Length > 0)
+            if (txt_lines.Lines.Length > 0 || txt_lines.Text != string.Empty)
             {
                 changeLine.multiLines = txt_lines.Lines;
                 changeLine.ConvertLinesToSingle();
                 txt_single_line.Text = changeLine.singleLine;
                 btn_copytext.Enabled = true;
+
+                logtofile.Trace($"Lines to change {txt_lines.Text.ToString()}");
+                logtofile.Trace( $"single line recovered : {changeLine.singleLine}" );
             }
         }
 
@@ -54,15 +58,26 @@ namespace Col2Line
         {
             if (txt_single_line.Text != string.Empty || txt_single_line.Text != null)
             {
-                Clipboard.SetText(txt_single_line.Text);
+                try
+                {
+                    Clipboard.SetText( txt_single_line.Text );
+                }
+                catch (Exception excp)
+                {
+                    logtofile.Error( $"An unexpected error : {excp.Message}"  );
+                    throw;
+                }                
             }               
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
             txt_lines.Text = string.Empty;
+            txt_lines.Clear();
             txt_single_line.Text = string.Empty;
             btn_copytext.Enabled = false;
+
+            logtofile.Trace( $"Pressed button {btn_clear.Name.ToString()}" );
 
         }
 
@@ -82,7 +97,8 @@ namespace Col2Line
             }
             catch(Exception excp)
             {
-
+                logtofile.Error( $"An unexcepted error ocurred :{excp.Message}" );
+                throw;
             }
         }
     }

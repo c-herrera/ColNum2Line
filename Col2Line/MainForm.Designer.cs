@@ -46,7 +46,7 @@
             this.btn_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_exit.ImageIndex = 0;
             this.btn_exit.ImageList = this.imageList1;
-            this.btn_exit.Location = new System.Drawing.Point(290, 223);
+            this.btn_exit.Location = new System.Drawing.Point(294, 196);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 0;
@@ -60,6 +60,7 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "Apps-session-halt-icon.png");
             this.imageList1.Images.SetKeyName(1, "copy-icon.png");
+            this.imageList1.Images.SetKeyName(2, "Clipboard-Paste-icon.png");
             // 
             // txt_lines
             // 
@@ -90,7 +91,7 @@
             // btn_copytext
             // 
             this.btn_copytext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_copytext.ImageIndex = 1;
+            this.btn_copytext.ImageIndex = 2;
             this.btn_copytext.ImageList = this.imageList1;
             this.btn_copytext.Location = new System.Drawing.Point(207, 124);
             this.btn_copytext.Name = "btn_copytext";
@@ -122,7 +123,7 @@
             // linkLbl_log_view
             // 
             this.linkLbl_log_view.AutoSize = true;
-            this.linkLbl_log_view.Location = new System.Drawing.Point(13, 233);
+            this.linkLbl_log_view.Location = new System.Drawing.Point(17, 206);
             this.linkLbl_log_view.Name = "linkLbl_log_view";
             this.linkLbl_log_view.Size = new System.Drawing.Size(53, 13);
             this.linkLbl_log_view.TabIndex = 7;
@@ -134,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 273);
+            this.ClientSize = new System.Drawing.Size(383, 235);
             this.Controls.Add(this.linkLbl_log_view);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.lbl_info1);
