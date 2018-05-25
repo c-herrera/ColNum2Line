@@ -10,6 +10,7 @@ namespace Col2Line
     {
         private string _theLine;
         private string[] _theLines;
+        private int _totalLines;
 
         /// <summary>
         /// Class constructor
@@ -17,6 +18,7 @@ namespace Col2Line
         public Col2Line()
         {
             _theLine = string.Empty;
+            _totalLines = 0;
         }
 
         /// <summary>
@@ -25,10 +27,16 @@ namespace Col2Line
         public void ConvertLinesToSingle()
         {
             var temp = new List<string>();
+            temp.Clear();
+            _totalLines = 0;
             foreach (var s in _theLines)
             {
-                if (!string.IsNullOrEmpty(s))
+                if (string.IsNullOrEmpty(s) == false)
+                {
                     temp.Add(s);
+                    _totalLines++;
+                }
+                    
             }
             _theLines = temp.ToArray();
 
@@ -50,5 +58,14 @@ namespace Col2Line
         {
             set { _theLines = value; }
         }
+
+        /// <summary>
+        /// Total amount of lines
+        /// </summary>
+        public int totalLines
+        {
+            get { return _totalLines; }
+        }
+
     }
 }
