@@ -50,6 +50,8 @@ namespace Col2Line
                 btn_copytext.Enabled = true;
 
                 logtofile.Trace($"Lines to change {txt_lines.Text.ToString()}");
+                logtofile.Trace($"Lines pasted {txt_lines.Lines.Length}");
+                logtofile.Trace($"Lines procesed {changeLine.totalLines}");
                 logtofile.Trace( $"single line recovered : {changeLine.singleLine}" );
             }
         }
