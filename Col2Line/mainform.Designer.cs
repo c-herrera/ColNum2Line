@@ -39,6 +39,7 @@
             this.lbl_info1 = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
             this.linkLbl_log_view = new System.Windows.Forms.LinkLabel();
+            this.btn_convert_m = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -61,6 +62,9 @@
             this.imageList1.Images.SetKeyName(0, "Apps-session-halt-icon.png");
             this.imageList1.Images.SetKeyName(1, "copy-icon.png");
             this.imageList1.Images.SetKeyName(2, "Clipboard-Paste-icon.png");
+            this.imageList1.Images.SetKeyName(3, "delete-icon.png");
+            this.imageList1.Images.SetKeyName(4, "Document-Text-icon.png");
+            this.imageList1.Images.SetKeyName(5, "page-white-get-icon.png");
             // 
             // txt_lines
             // 
@@ -70,6 +74,7 @@
             this.txt_lines.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_lines.Size = new System.Drawing.Size(170, 84);
             this.txt_lines.TabIndex = 1;
+            this.txt_lines.TextChanged += new System.EventHandler(this.txt_lines_TextChanged);
             // 
             // txt_single_line
             // 
@@ -77,10 +82,15 @@
             this.txt_single_line.Name = "txt_single_line";
             this.txt_single_line.Size = new System.Drawing.Size(170, 20);
             this.txt_single_line.TabIndex = 2;
+            this.txt_single_line.TextChanged += new System.EventHandler(this.txt_single_line_TextChanged);
             // 
             // btn_convert
             // 
-            this.btn_convert.Location = new System.Drawing.Point(16, 124);
+            this.btn_convert.Enabled = false;
+            this.btn_convert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_convert.ImageIndex = 5;
+            this.btn_convert.ImageList = this.imageList1;
+            this.btn_convert.Location = new System.Drawing.Point(199, 113);
             this.btn_convert.Name = "btn_convert";
             this.btn_convert.Size = new System.Drawing.Size(166, 23);
             this.btn_convert.TabIndex = 3;
@@ -93,9 +103,9 @@
             this.btn_copytext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_copytext.ImageIndex = 2;
             this.btn_copytext.ImageList = this.imageList1;
-            this.btn_copytext.Location = new System.Drawing.Point(207, 124);
+            this.btn_copytext.Location = new System.Drawing.Point(199, 152);
             this.btn_copytext.Name = "btn_copytext";
-            this.btn_copytext.Size = new System.Drawing.Size(162, 23);
+            this.btn_copytext.Size = new System.Drawing.Size(166, 23);
             this.btn_copytext.TabIndex = 4;
             this.btn_copytext.Text = "Copy to Clipboard";
             this.btn_copytext.UseVisualStyleBackColor = true;
@@ -108,13 +118,16 @@
             this.lbl_info1.Name = "lbl_info1";
             this.lbl_info1.Size = new System.Drawing.Size(125, 13);
             this.lbl_info1.TabIndex = 5;
-            this.lbl_info1.Text = "Paste Multiline test here :";
+            this.lbl_info1.Text = "Paste Multiline text here :";
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(157, 171);
+            this.btn_clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_clear.ImageIndex = 3;
+            this.btn_clear.ImageList = this.imageList1;
+            this.btn_clear.Location = new System.Drawing.Point(12, 152);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_clear.Size = new System.Drawing.Size(106, 23);
             this.btn_clear.TabIndex = 6;
             this.btn_clear.Text = "Clear Text!";
             this.btn_clear.UseVisualStyleBackColor = true;
@@ -131,11 +144,26 @@
             this.linkLbl_log_view.Text = "Opent log";
             this.linkLbl_log_view.Click += new System.EventHandler(this.linkLbl_log_view_Click);
             // 
+            // btn_convert_m
+            // 
+            this.btn_convert_m.Enabled = false;
+            this.btn_convert_m.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_convert_m.ImageIndex = 5;
+            this.btn_convert_m.ImageList = this.imageList1;
+            this.btn_convert_m.Location = new System.Drawing.Point(199, 72);
+            this.btn_convert_m.Name = "btn_convert_m";
+            this.btn_convert_m.Size = new System.Drawing.Size(166, 23);
+            this.btn_convert_m.TabIndex = 8;
+            this.btn_convert_m.Text = "Change to Multiple Line";
+            this.btn_convert_m.UseVisualStyleBackColor = true;
+            this.btn_convert_m.Click += new System.EventHandler(this.btn_convert_m_Click);
+            // 
             // frm_Mul2Sin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 235);
+            this.Controls.Add(this.btn_convert_m);
             this.Controls.Add(this.linkLbl_log_view);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.lbl_info1);
@@ -167,6 +195,7 @@
         private System.Windows.Forms.Label lbl_info1;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.LinkLabel linkLbl_log_view;
+        private System.Windows.Forms.Button btn_convert_m;
     }
 }
 
