@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs" />
     <Compile Include="BasicLogger.cs" />
     <Compile Include="Col2Line.cs" />
     <Compile Include="MainForm.cs">
